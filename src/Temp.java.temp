@@ -1,0 +1,51 @@
+public class TempServer {
+
+    // Логика игры
+    // q = []
+    //
+    // client1, client2
+    // client1.accept(), client2.accept()
+    //
+    // await client1 name
+    // await client2 name
+    // await client1 placeships
+    // await client2 placeships
+    //
+    // while(!stop) // gameloop
+    // send client1 make turn -> hit, miss, error
+    // hit -> append changes, win condition, resent
+    // miss -> send client2, repeat
+    // error -> resent
+
+    // sendNameRequest(client)
+    sendMessage
+    winCondition
+    placeShipRequest
+    makeTurnRequest
+
+
+    public static void main(String[] args) {
+        System.out.println("Player#1, please enter your name:");
+        playerName1 = scanner.nextLine();
+        System.out.println("Player#2, please enter your name:");
+        playerName2 = scanner.nextLine();
+        placeShips(playerName1, battlefield1);
+        placeShips(playerName2, battlefield2);
+        while (true) {
+            makeTurn(playerName1, monitor1, battlefield2);
+            if (isWinCondition()) {
+                break;
+            }
+            makeTurn(playerName2, monitor2, battlefield1);
+            if (isWinCondition()) {
+                break;
+            }
+        }
+    }
+}
+
+public class TempClient{
+    handle get message
+    handlePlaceShips
+    handleMakeTurn
+}
